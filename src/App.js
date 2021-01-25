@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./Header";
 import TimerControls from "./TimerControls";
 import Timer from "./Timer";
+import PlayPauseControls from "./PlayPauseControls";
 import moment from "moment";
 
 class App extends React.Component {
@@ -12,6 +13,7 @@ class App extends React.Component {
     initialSessionValue: 25,
     currentTimerMode: "session",
     time: 25 * 60 * 1000,
+    active: false,
 
   }
 
@@ -24,6 +26,7 @@ class App extends React.Component {
           <TimerControls type="Session" value={this.state.initialSessionValue}/>
         </div>
         <Timer mode={this.state.currentTimerMode} time={moment(this.state.time).format("mm:ss")}/>
+        <PlayPauseControls active={this.state.active}/>
       </div>
     )
   }

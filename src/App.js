@@ -1,11 +1,17 @@
 import React from "react";
 import './App.css';
+import Header from "./Header";
+import Timer from "./Timer";
 
 class App extends React.Component {
   render() {
     return(
       <div>
-        <h1>25+5 Clock</h1>
+        <Header/>
+        <div>
+          <Timer type="Break"/>
+          <Timer type="Session"/>
+        </div>
       </div>
     )
   }
